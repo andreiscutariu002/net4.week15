@@ -24,8 +24,8 @@ namespace FileGenerator
 
         static void Main(string[] args)
         {
-            var list = Generate(4000000);
-            File.AppendAllLines("data.txt", list.Select(x=>x.AsLine).ToList());
+            var list = Generate(400000);
+            File.AppendAllLines("data_simple.txt", list.Select(x=>x.AsLine).ToList());
         }
 
         private static IEnumerable<Line> Generate(int len)
