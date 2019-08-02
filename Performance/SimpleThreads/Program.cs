@@ -34,63 +34,30 @@ namespace SimpleThreads
 
         private static void RunOnThread1()
         {
-            var start = 0;
-            var end = 1000;
-
             var currentThreadId = Thread.CurrentThread.ManagedThreadId;
             Console.WriteLine($"[Thread 1] Hello from thread with id: {currentThreadId}");
 
-            for (int i = start; i < end; i++)
-            {
-                lock (locker)
-                {
-                    File.AppendAllText(FileName, i + Environment.NewLine);
-                }
-            }
-
-            //Thread.Sleep(TimeSpan.FromSeconds(10));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
 
             Console.WriteLine($"[Thread 1] End job on thread id: {currentThreadId}");
         }
 
         private static void RunOnThread2()
         {
-            var start = 1001;
-            var end = 2000;
-
             var currentThreadId = Thread.CurrentThread.ManagedThreadId;
             Console.WriteLine($"[Thread 2] Hello from thread with id: {currentThreadId}");
 
-            for (int i = start; i < end; i++)
-            {
-                lock (locker)
-                {
-                    File.AppendAllText(FileName, i + Environment.NewLine);
-                }
-            }
-
-            //Thread.Sleep(TimeSpan.FromSeconds(10));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
 
             Console.WriteLine($"[Thread 2] End job on thread id: {currentThreadId}");
         }
 
         private static void RunOnThread3()
         {
-            var start = 2001;
-            var end = 3000;
-
             var currentThreadId = Thread.CurrentThread.ManagedThreadId;
             Console.WriteLine($"[Thread 3] Hello from thread with id: {currentThreadId}");
 
-            for (int i = start; i < end; i++)
-            {
-                lock (locker)
-                {
-                    File.AppendAllText(FileName, i + Environment.NewLine);
-                }
-            }
-
-            //Thread.Sleep(TimeSpan.FromSeconds(10));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
 
             Console.WriteLine($"[Thread 3] End job on thread id: {currentThreadId}");
         }
