@@ -41,7 +41,7 @@ namespace Tpl._04
 
             Console.WriteLine();
 
-            return new List<int>{1,2,4};
+            return new List<int>{1, 2, 4};
         }
 
         public static int Method2(List<int> result)
